@@ -1,0 +1,11 @@
+<p-tabView [activeIndex]="index" (onChange)="handleChange($event)" styleClass="custom-tabs">
+
+    <p-tabPanel header="Listar">
+       <listar-perfil (handlerMain)="handlerMain($event)"></listar-perfil>
+    </p-tabPanel>
+
+    <p-tabPanel header="Editar">
+        <editar-perfil (handlerMain)="handlerMain($event)"></editar-perfil>
+    </p-tabPanel>
+    
+</p-tabView>

@@ -1,0 +1,32 @@
+<div class="content-login">
+    <p-toast></p-toast>
+    
+    <form [formGroup]="formLogin">
+        <div class="op-panel op-login">
+            <div class="op-header" style="display: flex; justify-content: center; padding: 20px;">
+                <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/2x/external-user-user-flatart-icons-outline-flatarticons-3.png">
+            </div>
+
+            <div class="op-body op-campos-login">
+                <span class="op-field p-input-icon-left">
+                    <i class="op-field-icon pi pi-user"></i>
+                    <label for="user">Username</label>
+                    <input id="user" type="text" pInputText formControlName="userName"> 
+                </span>
+
+                <span class="op-field p-input-icon-left">
+                    <i class="op-field-icon pi pi-lock"></i>
+                    <label for="pass">Password</label>
+                    <input id="pass" type="password" pInputText formControlName="userPass"> 
+                </span>
+            </div>
+
+            <div class="op-footer" style="display: flex; justify-content: center; padding: 20px; border-top: none;">
+                <button pButton (click)="handleClick($event)" type="button" class="p-button-info"> Login </button>
+            </div>
+
+        </div>
+
+    </form>
+    
+</div>

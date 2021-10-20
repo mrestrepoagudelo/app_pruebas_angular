@@ -1,0 +1,35 @@
+<div class="op-panel">
+
+    <div class="op-header op-navbar">
+        <div class="op-navbar-left">
+            <h1 class="title-app">App</h1>
+            <div>
+                <button (click)="visibleSidebar = true" pButton type="button" icon="pi pi-bars" class="p-button-raised p-button-text button-menu"></button>
+            </div>
+        </div>
+        
+        <div class="op-navbar-right">
+            <div style="display: flex; align-items: center; color: white; font-size: 14px;">
+                <p style="margin-right: 5px;">{{userName}}</p>
+                <i class="far fa-user"></i>
+            </div>
+            <div>
+                <button (click)="logoutApp()" pButton type="button" icon="pi pi-sign-out" class="p-button-raised p-button-text button-menu buton-menu-exit"></button>
+            </div>           
+        </div>
+    
+    </div>
+
+    <div class="op-body">
+        <router-outlet></router-outlet>
+        <img style="position: absolute; bottom: 0; left: 30px; z-index: -1;" src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Freelancer_re_irh4.svg" alt="">
+    </div>
+
+</div>
+
+<p-sidebar [(visible)]="visibleSidebar">
+    <h2 class="title-app-sidebar">App</h2>
+    <p-tree [value]="menuTree" selectionMode="single" (onNodeSelect)="nodeSelect($event)" [style]="{'padding':'0px'}"></p-tree>
+</p-sidebar>
+
+<p-toast position="top-center"></p-toast>

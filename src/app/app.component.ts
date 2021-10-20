@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ComponentFactoryResolver } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'appAngular';
+  constructor(private componentFactoryResolver:ComponentFactoryResolver){
+    
+  }
+
+  ngOnInit() {
+    
+  }
+
 }

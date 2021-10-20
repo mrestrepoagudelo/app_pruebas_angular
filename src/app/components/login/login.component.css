@@ -1,0 +1,55 @@
+.content-login{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(-225deg, #CBBACC 0%, #2580B3 100%);
+}
+
+.op-login{
+    width: 300px;
+    height: 390px;
+    box-shadow: 0 8px 17px 2px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%), 0 5px 5px -3px rgb(0 0 0 / 20%);
+    border-radius: 5px;
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+}
+
+.op-campos-login{
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+
+.op-campos-login span{
+    margin: 10px;
+}
+
+.ng-select.custom {
+    height:5px !important;
+    font-size: 0.8em;
+}
+
+.ng-select.custom .ng-select-container  {
+    height:5px !important;
+}
+
+/* input.ng-valid{
+    border: 2px solid rgb(193, 236, 193);
+} */
+
+input.ng-invalid.ng-touched{
+    border: 2px solid rgb(247, 183, 183);
+}
+
+/* .ng-select.custom-select {
+    border:0px;
+    min-height: 0px;
+    border-radius: 0;
+}
+.ng-select.custom-select .ng-select-container  {            
+    min-height: 0px;
+    border-radius: 0;
+} */
+
+/* .ng-select.ng-invalid div.ng-select-container{
+    border: 1px solid rgb(148, 87, 87) !important;
+} */

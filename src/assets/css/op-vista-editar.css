@@ -1,0 +1,33 @@
+.p-button{
+    margin-right: .5rem;
+}
+.p-float-label{
+    float: left;
+    margin-top: 22px;
+    margin-left: 10px;
+}
+.m-panel{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+    border-radius: 3px;
+}
+
+.m-panel-header{
+    order: 1;
+}
+
+.m-panel-body{
+    order: 2;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.m-panel-footer{
+    order: 3;
+    padding: 15px;
+}
+
+.m-cont-editar{
+    padding: 10px;
+}

@@ -1,0 +1,51 @@
+<p-toast></p-toast>
+<p-confirmPopup></p-confirmPopup>
+<div class="m-panel">
+
+    <div class="m-panel-header">
+        <div style="padding: 7px; font-weight: bold; background: #90caf9;">Editar Usuario</div>
+    </div>
+
+    <div class="m-panel-body">
+    	<form [formGroup]="formUsuario" class="form-row m-cont-editar">
+            <input type="hidden" pInputText formControlName="idUsuario"> 
+		
+		    <span class="op-field op-field-required">
+                <label for="userName">User Name</label>
+                <input id="userName" type="text" pInputText formControlName="userName"> 
+            </span>
+		
+		    <span class="op-field op-field-required">
+                <label for="clave">Clave</label>
+                <input id="clave" type="text" pInputText formControlName="clave"> 
+            </span>
+			
+			<span class="op-field op-field-required">
+                <label for="float-input">Persona</label>
+                <ng-select [items]="mapListCombo.Persona" formControlName="idPersona" class="custom-select" bindLabel="nombres"  bindValue="idPersona" placeholder="Seleccione una opci&oacute;n..." appendTo="body"></ng-select>
+            </span>
+			
+			<span class="op-field op-field-required">
+                <label for="float-input">Perfil</label>
+                <ng-select [items]="mapListCombo.Perfil" formControlName="idPerfil" class="custom-select" bindLabel="nombrePerfil"  bindValue="idPerfil" placeholder="Seleccione una opci&oacute;n..." appendTo="body"></ng-select>
+            </span>
+			
+			<span class="op-field op-field-required">
+                <label for="float-input">Activo</label>
+                <ng-select [items]="mapListCombo.activo" formControlName="activo" class="custom-select" bindLabel="value"  bindValue="id" placeholder="Seleccione una opci&oacute;n..." appendTo="body"></ng-select>
+            </span>
+		</form>
+    </div>
+    
+    <div class="m-panel-footer">
+        <button *ngIf='formUsuario.value.idUsuario == null; else elseBlock' (click)="onClickGuardar()" pButton type="button" label="Guardar" icon="pi pi-save" class="p-button-raised p-button-text p-button-success"></button>
+        
+        <ng-template #elseBlock>
+            <button (click)="onClickGuardar()" pButton type="button" label="Modificar" icon="pi pi-save" class="p-button-raised p-button-text p-button-success"></button>
+        </ng-template>
+
+        <button (click)="onClickEliminar($event)" pButton type="button" label="Eliminar" icon="pi pi-trash" class="p-button-raised p-button-text p-button-danger"></button>
+        <button (click)="onClickNuevo()" pButton type="button" label="Nuevo" icon="pi pi-plus" class="p-button-raised p-button-text p-button-primary"></button>
+        <button (click)="onClickCancelar()" pButton type="button" label="Cancelar" icon="pi pi-angle-left" class="p-button-raised p-button-text p-button-secondary"></button>
+    </div>
+</div>

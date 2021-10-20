@@ -1,0 +1,41 @@
+<p-toast></p-toast>
+<div class="m-panel" style="margin: 10px;">
+
+    <div class="m-panel-header">
+        <div style="padding: 7px; font-weight: bold; background: #90caf9;">Asignar Permisos</div>
+    </div>
+
+    <div class="m-panel-body">
+    	<form [formGroup]="formPermisosMenuPerfil" class="form-row m-cont-editar">		
+			<span class="op-field op-field-required">
+                <label for="float-input">Perfil</label>
+                <ng-select 
+                    [items]="mapListCombo.Perfil" 
+                    formControlName="idPerfil" 
+                    class="custom-select" 
+                    bindLabel="nombrePerfil"  
+                    bindValue="idPerfil" 
+                    placeholder="Seleccione una opci&oacute;n..." appendTo="body"
+                    (clear)="resetCombo();"
+                >
+                </ng-select>
+            </span>
+            <span>
+                <button (click)="onClickBuscarPermisos()" style="margin-top: 18px;" pButton type="button" label="Buscar Permisos" icon="pi pi-search" class="p-button-raised p-button-text p-button-success"></button>
+            </span>
+		</form>
+
+        <p-tree [value]="menuTree" selectionMode="single" [style]="{'padding':'0px','width':'500px'}">
+            <ng-template let-node pTemplate="actionPermiso">
+                <div *ngIf="node.tienePermiso == true; else elseBlock">
+                    <span >{{node.label}}</span> <button class="btnPermiso btnQuitarPermiso" (click)="onClickAsignarPermiso(node)"><i class="fas fa-trash-alt"></i> Quitar</button>
+                </div>
+                <ng-template #elseBlock>
+                    <span >{{node.label}}</span><button class="btnPermiso btnAsignarPermiso" (click)="onClickAsignarPermiso(node)"><i class="fas fa-plus"></i> Asignar</button>
+                </ng-template>
+            </ng-template>
+        </p-tree>
+
+    </div>
+
+</div>

@@ -1,0 +1,60 @@
+<p-toast></p-toast>
+<p-confirmPopup></p-confirmPopup>
+<p-table [value]="data" 
+    styleClass="p-datatable-sm p-datatable-gridlines" 
+    selectionMode="single" 
+    [(selection)]="rowSelected" 
+    [scrollable]="true" 
+    [style]="{width:'1400'}" 
+    scrollHeight="200px"
+>
+    <ng-template pTemplate="caption"> 
+        <div class="title-listar">Listado</div>
+        <div class="cont-buttons-actions">
+            <button (click)="onClickNuevo()" pButton type="button" label="Nuevo" icon="pi pi-plus" class="p-button-raised p-button-text p-button-success"></button>
+            <button (click)="onClickEditar()" pButton type="button" label="Editar" icon="pi pi-pencil" class="p-button-raised p-button-text"></button>
+            <button (click)="onClickEliminar($event)" pButton type="button" label="Eliminar" icon="pi pi-trash" class="p-button-raised p-button-text p-button-danger"></button>
+            <button (click)="onClickFiltro()" pButton type="button" label="Filtros" icon="pi pi-filter" class="p-button-raised p-button-text p-button-secondary"></button>
+        </div>
+        <div class="cont-filtros" [hidden]="!mostrarFiltro">
+            <form [formGroup]="formPerfilFilters" class="form-row">
+		
+			     <span class="op-field">
+	                <label for="nombrePerfil">Nombre Perfil</label>
+	                <input id="nombrePerfil" type="text" pInputText formControlName="nombrePerfil"> 
+	            </span>
+                
+				<span>
+                    <button (click)="onClickBuscar()" pButton type="button" label="Buscar" icon="pi pi-search" class="p-button-raised p-button-text p-button-primary"></button>
+                </span>
+                
+                <span>
+                    <button (click)="onClickCleanFilters()" pButton type="button" label="Limpiar filtros" icon="pi pi-filter-slash" class="p-button-raised p-button-text p-button-primary"></button>
+                </span>
+                               
+            </form>
+        </div>
+        
+    </ng-template>
+
+    <ng-template pTemplate="header">
+        <tr>
+            <th *ngFor="let col of cols" [ngStyle]="{'display': col.display}">
+                {{col.header}}
+            </th>
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-data>
+        <tr [pSelectableRow]="data" [pSelectableRowDblClick]="data" (dblclick)="onRowDblclick($event,data)">
+            <td *ngFor="let col of cols" [ngStyle]="{'display': col.display}">
+                {{data[col.field]}}
+            </td>
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+
+    </ng-template>
+</p-table>
+<p-paginator [rows]="pageSize" [totalRecords]="totalRegistros" [rowsPerPageOptions]="[10,20,30,50,100]" (onPageChange)="onChangePage($event)"></p-paginator>
