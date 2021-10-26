@@ -1,7 +1,9 @@
-import { Component, ViewChild, ComponentFactoryResolver, OnInit } from '@angular/core';
+import { Component, ViewChild, ComponentFactoryResolver, OnInit, ViewContainerRef } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { JwtService } from 'src/app/service/jwt/jwt.service';
-import { MenuTreeService } from 'src/app/service/main_app/menu-tree.service';
+import { DataAppService } from 'src/app/service/main_app/data-app.service';
+import { MainPersonaComponent } from '../persona/main-persona/main-persona.component';
+import { MainUsuarioComponent } from '../usuario/main-usuario/main-usuario.component';
 
 @Component({
   selector: 'app-main-app',
@@ -18,7 +20,8 @@ export class MainAppComponent implements OnInit {
 
   constructor(
     private jwtService:JwtService, 
-    private menuTreeService:MenuTreeService){
+    public dataAppService:DataAppService
+  ){
   }
 
   ngOnInit() {
@@ -27,11 +30,11 @@ export class MainAppComponent implements OnInit {
   }
 
   initMenuTree(){
-    this.menuTree = this.menuTreeService.getMenuTree();
+    this.menuTree = this.dataAppService.getMenuTree();
   }
 
   nodeSelect(event:Event) {
-    this.menuTreeService.selectNode(event);
+    this.dataAppService.selectNode(event);
   }
 
   logoutApp(){

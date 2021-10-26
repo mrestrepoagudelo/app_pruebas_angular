@@ -11,9 +11,11 @@ export class MainPersonaComponent implements OnInit {
 
   @ViewChild(EditarPersonaComponent)componentEditar:any;
   @ViewChild(ListarPersonaComponent)componentListar:any;
-  public index:number = 0;
+  public index:number;
 
-  constructor() { }
+  constructor() { 
+    this.index = 0;
+  }
 
   ngOnInit(): void {
 

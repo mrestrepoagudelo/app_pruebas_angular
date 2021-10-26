@@ -36,10 +36,16 @@ import { EditarPerfilComponent } from './components/perfil/editar-perfil/editar-
 import { PermisosMenuPerfilComponent } from './components/permisos-menu-perfil/permisos-menu-perfil.component';
 import {TreeTableModule} from 'primeng/treetable';
 import {TreeModule} from 'primeng/tree';
+import { DynamicHostDirective } from './directives/dynamic-host.directive';
+import { TabsComponent } from './components/varios/tabs/tabs.component';
+import { TabComponent } from './components/varios/tabs/tab.component';
+import { TabsModule } from './components/varios/tabs/tabs.module';
 
 @NgModule({
   declarations: [
+    DynamicHostDirective,
     AppComponent,
+    
     MainPersonaComponent,
     ListarPersonaComponent,
     EditarPersonaComponent,
@@ -60,6 +66,7 @@ import {TreeModule} from 'primeng/tree';
   entryComponents:[
   ],
   imports: [
+    TabsModule,
     NgSelectModule,
     BrowserModule, 
     BrowserAnimationsModule,

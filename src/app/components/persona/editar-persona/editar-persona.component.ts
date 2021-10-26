@@ -70,23 +70,28 @@ export class EditarPersonaComponent implements OnInit {
 
   onClickEliminar(event:any){
     var idPersona = this.formPersona.value.idPersona;
-    this.confirmationService.confirm({
-      target: event.target,
-      message: 'Desea eliminar este registro?',
-      icon: 'pi pi-exclamation-triangle',
-      accept: () => {
-        this.personaService.delete(idPersona).subscribe(
-          (result:any)=>{
-            this.messageService.add({severity:'success', summary:'Info', detail:result.msg});
-            this.onClickNuevo();
-          },
-          error =>{
-            console.log(error);
-          }
-        );
-      },
-      reject: () => {}
-    });
+    if(idPersona){
+      this.confirmationService.confirm({
+        target: event.target,
+        message: 'Desea eliminar este registro?',
+        icon: 'pi pi-exclamation-triangle',
+        accept: () => {
+          this.personaService.delete(idPersona).subscribe(
+            (result:any)=>{
+              this.messageService.add({severity:'success', summary:'Info', detail:result.msg});
+              this.onClickNuevo();
+            },
+            error =>{
+              console.log(error);
+            }
+          );
+        },
+        reject: () => {}
+      });
+    }
+    else{
+      this.messageService.add({severity:'info', summary:'Info', detail:'Debes seleccionar un registro para eliminar!'});
+    }
   }
   
   onClickNuevo(){
@@ -104,8 +109,7 @@ export class EditarPersonaComponent implements OnInit {
     for (const property in this.formPersona.value) {
       if(property != "idPersona" && property.startsWith("id")){
         let recurso = property.replace('id', '');
-        this.personaService.getResourcesView(recurso).subscribe(
-          (result:any)=>{
+        this.personaService.getResourcesView(recurso).subscribe((result:any)=>{
             this.mapListCombo[recurso] = result;
           }
         );

@@ -16,7 +16,7 @@ export class MainUsuarioComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
+    
   }
 
   handlerMain(emitter:any){

@@ -1,9 +1,8 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MessageService, TreeNode } from 'primeng/api';
-import { FocusElement } from 'src/app/utils/UtilFocusElement';
 import { PermisosMenuPerfilService } from 'src/app/service/permisos_menu_perfil/permisos_menu_perfil.service';
-import { MenuTreeService } from 'src/app/service/main_app/menu-tree.service';
+import { DataAppService } from 'src/app/service/main_app/data-app.service';
 
 @Component({
   selector: 'app-permisos-menu-perfil',
@@ -22,7 +21,7 @@ export class PermisosMenuPerfilComponent implements OnInit {
     private el: ElementRef,
     private permisosMenuPerfilService:PermisosMenuPerfilService,
     private messageService: MessageService, 
-    private menuTreeService: MenuTreeService
+    private dataAppService: DataAppService
   ) {
 
     this.formPermisosMenuPerfil = new FormGroup({
@@ -53,7 +52,7 @@ export class PermisosMenuPerfilComponent implements OnInit {
           this.mapPermisos[element.control] = "S";
         }
 
-        let menuTree = this.menuTreeService.getMenuTree();
+        let menuTree = this.dataAppService.getMenuTree();
         this.validarPermisos(menuTree[0]);
         this.menuTree = menuTree;
       }
@@ -95,6 +94,10 @@ export class PermisosMenuPerfilComponent implements OnInit {
   }
 
   resetCombo(){
+    this.clearMenuTree();
+  }
+
+  changeCombo(event:Event){
     this.clearMenuTree();
   }
 

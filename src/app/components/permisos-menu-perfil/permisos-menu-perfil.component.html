@@ -16,6 +16,7 @@
                     bindLabel="nombrePerfil"  
                     bindValue="idPerfil" 
                     placeholder="Seleccione una opci&oacute;n..." appendTo="body"
+                    (change)="changeCombo($event)"
                     (clear)="resetCombo();"
                 >
                 </ng-select>
@@ -28,10 +29,10 @@
         <p-tree [value]="menuTree" selectionMode="single" [style]="{'padding':'0px','width':'500px'}">
             <ng-template let-node pTemplate="actionPermiso">
                 <div *ngIf="node.tienePermiso == true; else elseBlock">
-                    <span >{{node.label}}</span> <button class="btnPermiso btnQuitarPermiso" (click)="onClickAsignarPermiso(node)"><i class="fas fa-trash-alt"></i> Quitar</button>
+                    <span >{{node.label}}</span> <button class="btnPermiso btnQuitarPermiso" (click)="onClickAsignarPermiso(node)"><i class="fas fa-lock"></i> Quitar</button>
                 </div>
                 <ng-template #elseBlock>
-                    <span >{{node.label}}</span><button class="btnPermiso btnAsignarPermiso" (click)="onClickAsignarPermiso(node)"><i class="fas fa-plus"></i> Asignar</button>
+                    <span >{{node.label}}</span><button class="btnPermiso btnAsignarPermiso" (click)="onClickAsignarPermiso(node)"><i class="fas fa-lock-open"></i> Asignar</button>
                 </ng-template>
             </ng-template>
         </p-tree>

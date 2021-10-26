@@ -24,6 +24,12 @@
 	font-weight: 300;
 }
 
+.title-app-options{
+	color: white;
+	margin-left: 10px;
+	font-weight: 300;
+}
+
 .title-app-sidebar{
 	color: #4255bb; 
 	position: fixed; 
@@ -40,4 +46,12 @@
 
 .buton-menu-exit{
 	margin-right: 10px;
+}
+
+.op-body-ppal{
+	background-image: url(/assets/img/fondo_img.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-position-y: bottom;
+    background-size: 500px;
 }

@@ -6,6 +6,7 @@
             <div>
                 <button (click)="visibleSidebar = true" pButton type="button" icon="pi pi-bars" class="p-button-raised p-button-text button-menu"></button>
             </div>
+            <h2 class="title-app-options">{{dataAppService.titleSelectOption}}</h2>
         </div>
         
         <div class="op-navbar-right">
@@ -13,6 +14,7 @@
                 <p style="margin-right: 5px;">{{userName}}</p>
                 <i class="far fa-user"></i>
             </div>
+
             <div>
                 <button (click)="logoutApp()" pButton type="button" icon="pi pi-sign-out" class="p-button-raised p-button-text button-menu buton-menu-exit"></button>
             </div>           
@@ -20,9 +22,17 @@
     
     </div>
 
-    <div class="op-body">
+    <div class="op-body op-body-ppal">
+        
+        <!-- <m-tabs [selectedIndex]="indexTab"> 
+            <ng-container *ngFor="let tab of tabs">
+                <m-tab [tabTitle]="tab.label" [closable]="tab.closable" [component]="tab.component">
+                    {{tab.content}}
+                </m-tab>
+             </ng-container>  
+        </m-tabs> -->
+        
         <router-outlet></router-outlet>
-        <img style="position: absolute; bottom: 0; left: 30px; z-index: -1;" src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Freelancer_re_irh4.svg" alt="">
     </div>
 
 </div>

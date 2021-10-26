@@ -3,6 +3,7 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, CanA
 import { Observable } from 'rxjs';
 import { JwtService } from '../service/jwt/jwt.service';
 import {MessageService} from 'primeng/api';
+import { DataAppService } from '../service/main_app/data-app.service';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +13,7 @@ export class AuthGuardRouter implements CanActivateChild, CanActivate {
   constructor(
     private router: Router, 
     private jwtService: JwtService,
+    private dataAppService:DataAppService,
     private messageService: MessageService
   ) { }
 
@@ -19,7 +21,9 @@ export class AuthGuardRouter implements CanActivateChild, CanActivate {
     childRoute: ActivatedRouteSnapshot, 
     state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
       let recurso:string = childRoute.queryParams.recurso || '';
+      let label:string = childRoute.queryParams.label || '';
       let tienePermiso =  this.jwtService.getTienePermiso(recurso);
+      this.dataAppService.changeTitle(label);
 
       if(!this.jwtService.getToken()){
         this.router.navigate(["/login"]);

@@ -44,7 +44,11 @@ export class LoginComponent implements OnInit {
   
   }
 
-  handleClick(event:Event){
+  onSubmit(event:Event){
+    this.sendLogin();
+  }
+
+  sendLogin(){
     if(!this.formLogin.valid){
       this.messageService.add({severity:'warn', summary:'Info', detail:'Debes ingresar el Username y Password'});
       return;
