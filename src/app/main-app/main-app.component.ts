@@ -1,6 +1,6 @@
 import { Component,OnInit } from '@angular/core';
-import { JwtService } from 'src/app/service/jwt.service';
 import { DataAppService } from 'src/app/main-app/services/data-app.service';
+import { JwtService } from '../core/services/jwt.service';
 
 @Component({
   selector: 'app-main-app',

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
-import { JwtService } from 'src/app/service/jwt.service';
+import { JwtService } from 'src/app/core/services/jwt.service';
 import { LoginService } from 'src/app/login/services/login.service';
 
 @Component({

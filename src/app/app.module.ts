@@ -8,10 +8,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {ConfirmationService, MessageService} from 'primeng/api';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MainAppComponent } from './main-app/main-app.component';
-import { TokenInterceptorService } from './service/token-interceptor.service';
 import { AppRoutingModule } from './app-routing.module';
 import { PrimeNgCustomModule } from './shared/prime-ng-custom.module';
 import { LoginComponent } from './login/pages/login.component';
+import { TokenInterceptorService } from './core/services/token-interceptor.service';
 
 @NgModule({
   declarations: [
