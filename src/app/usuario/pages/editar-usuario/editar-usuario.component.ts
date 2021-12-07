@@ -1,8 +1,8 @@
 import { Component, ElementRef, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { UtilValidator } from 'src/app/utils/UtilValidator';
-import { FocusElement } from 'src/app/utils/UtilFocusElement';
+import { UtilValidator } from 'src/app/core/utils/UtilValidator';
+import { FocusElement } from 'src/app/core/utils/UtilFocusElement';
 import { UsuarioService } from '../../services/usuario.service';
 
 @Component({

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, CanActivateChild, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { JwtService } from '../service/jwt.service';
 import {MessageService} from 'primeng/api';
-import { DataAppService } from '../main-app/services/data-app.service';
+import { DataAppService } from '../../main-app/services/data-app.service';
+import { JwtService } from '../services/jwt.service';
 
 @Injectable({
   providedIn: 'root',
