@@ -7,11 +7,11 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {ConfirmationService, MessageService} from 'primeng/api';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { MainAppComponent } from './main-app/main-app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PrimeNgCustomModule } from './shared/prime-ng-custom.module';
 import { LoginComponent } from './login/pages/login.component';
 import { TokenInterceptorService } from './core/services/token-interceptor.service';
+import { MainAppComponent } from './main-app/pages/main-app.component';
 
 @NgModule({
   declarations: [
