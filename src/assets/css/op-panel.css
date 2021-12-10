@@ -131,7 +131,6 @@ body,html{
 .op-field .op-field-icon{
 	top: 66%;
 }
-
 .op-field-required label::after { 
 	content: " *";
 	margin-left: 5px;
