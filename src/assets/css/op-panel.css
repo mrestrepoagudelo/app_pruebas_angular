@@ -37,8 +37,6 @@ body,html{
   	-ms-flex-order: 1;              /* TWEENER - IE 10 */
   	-webkit-order: 1;               /* NEW - Chrome */
   	order: 1;                       /* NEW, Spec - Opera 12.1, Firefox 20+ */
-  	
-/*   	overflow: auto; */
 }
 .op-body{
 	-webkit-box-flex: 1 1;      	/* OLD - iOS 6-, Safari 3.1-6 */
