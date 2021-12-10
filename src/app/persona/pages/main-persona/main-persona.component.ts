@@ -42,7 +42,6 @@ export class MainPersonaComponent implements OnInit {
         this.changeTab(0);
         this.componentListar.loadData();
       }
-
     }
   }
 
