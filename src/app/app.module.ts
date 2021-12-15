@@ -12,6 +12,8 @@ import { PrimeNgCustomModule } from './shared/prime-ng-custom.module';
 import { LoginComponent } from './login/pages/login.component';
 import { TokenInterceptorService } from './core/services/token-interceptor.service';
 import { MainAppComponent } from './main-app/pages/main-app.component';
+import { MyComponentsModule } from './shared/my-components.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { MainAppComponent } from './main-app/pages/main-app.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    PrimeNgCustomModule
+    PrimeNgCustomModule,
+    MyComponentsModule
   ],
   providers: [
     ConfirmationService,

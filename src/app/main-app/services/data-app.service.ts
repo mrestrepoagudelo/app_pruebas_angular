@@ -9,7 +9,7 @@ export class DataAppService {
   pathPrincipal:string = 'mainApp';
   menuTree:any;
 
-  constructor(private router: Router) {
+  constructor() {
     this.menuTree = [
       {
         label: 'App',
@@ -36,17 +36,17 @@ export class DataAppService {
     this.titleSelectOption = title;
   }
 
-  selectNode(event:any){
-    let node = event.node;
-    if(node.recurso){
-      this.openComponent(node);
-    }
-  }
+  // selectNode(event:any){
+  //   let node = event.node;
+  //   if(node.recurso){
+  //     this.openComponent(node);
+  //   }
+  // }
 
-  openComponent(node:any){
-    let ruta = node.ruta;
-    let recurso = node.recurso;
-    let label = node.label;
-    this.router.navigate([this.pathPrincipal+"/"+ruta],{ queryParams: {recurso:recurso,label:label},skipLocationChange:false });
-  }
+  // openComponent(node:any){
+  //   let ruta = node.ruta;
+  //   let recurso = node.recurso;
+  //   let label = node.label;
+  //   this.router.navigate([this.pathPrincipal+"/"+ruta],{ queryParams: {recurso:recurso,label:label},skipLocationChange:false });
+  // }
 }

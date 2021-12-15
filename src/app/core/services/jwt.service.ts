@@ -32,4 +32,8 @@ export class JwtService {
   public logOut():void{
     window.localStorage.clear();
   }
+
+  public cleaToken(){
+    window.localStorage.clear();
+  }
 }

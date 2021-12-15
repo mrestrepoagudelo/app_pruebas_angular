@@ -27,23 +27,22 @@
     </div>
 
     <div class="op-body op-body-ppal">
-        
-        <!-- <m-tabs [selectedIndex]="indexTab"> 
+
+        <m-tabs-route [selectedIndex]="indexTab"> 
             <ng-container *ngFor="let tab of tabs">
-                <m-tab [tabTitle]="tab.label" [closable]="tab.closable" [component]="tab.component">
-                    {{tab.content}}
-                </m-tab>
+                <m-tab-route [tabTitle]="tab.label" [ruta]="tab.ruta" [closable]="tab.closable"></m-tab-route>
              </ng-container>  
-        </m-tabs> -->
-        
+        </m-tabs-route>
+
         <router-outlet></router-outlet>
+
     </div>
 
 </div>
 
 <p-sidebar [(visible)]="visibleSidebar">
     <h2 class="title-app-sidebar">App</h2>
-    <p-tree [value]="menuTree" selectionMode="single" (onNodeSelect)="nodeSelect($event)" [style]="{'padding':'0px'}"></p-tree>
+    <p-tree [value]="menuTree" selectionMode="single" (onNodeSelect)="nodeTreeSelect($event)" [style]="{'padding':'0px'}"></p-tree>
 </p-sidebar>
 
 <p-toast position="top-center"></p-toast>

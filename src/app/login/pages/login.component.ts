@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  
+    this.jwtService.cleaToken();
   }
 
   onSubmit(event:Event){
