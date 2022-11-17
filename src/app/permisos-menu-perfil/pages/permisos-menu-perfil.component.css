@@ -17,11 +17,11 @@
 }
 
 .btnAsignarPermiso{
-    background-color: #4CAF50;
+    background-color: #d54d3b;
 }
 
 .btnQuitarPermiso{
-    background-color: #d54d3b;
+    background-color: #4CAF50;
 }
 
 :host ::ng-deep .p-treenode-content{

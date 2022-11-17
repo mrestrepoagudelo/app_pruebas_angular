@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { JwtService } from 'src/app/core/services/jwt.service';
 import { LoginService } from 'src/app/login/services/login.service';
+import { DataAppService } from 'src/app/main-app/services/data-app.service';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
     private loginService:LoginService, 
     private messageService: MessageService,
     private jwtService:JwtService,
-    private router:Router
+    private router:Router,
+    public dataAppService:DataAppService
   ) { 
     
     this.formLogin = new FormGroup({
@@ -27,7 +29,7 @@ export class LoginComponent implements OnInit {
         Validators.required,
         Validators.minLength(3)
       ]),
-      userPass :new FormControl('12345',[
+      userPass :new FormControl('Socrates#123',[
         Validators.required,
         Validators.minLength(5)
       ])
@@ -43,6 +45,8 @@ export class LoginComponent implements OnInit {
   }
 
   sendLogin(){
+    this.jwtService.clearToken();
+
     if(!this.formLogin.valid){
       this.messageService.add({severity:'warn', summary:'Info', detail:'Debes ingresar el Username y Password'});
       return;
@@ -52,6 +56,7 @@ export class LoginComponent implements OnInit {
       (result:any)=>{
         this.jwtService.setToken(result.token);
         this.jwtService.setUserName(result.usuario.userName);
+        this.dataAppService.setRecursosPermisos(result.recursosMenu.list);
         this.router.navigate(["/mainApp"]);
       },
       error =>{
@@ -59,5 +64,4 @@ export class LoginComponent implements OnInit {
       }
     );
   }
-
 }

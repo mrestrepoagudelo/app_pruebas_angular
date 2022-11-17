@@ -12,8 +12,12 @@ export class JwtService {
   constructor() { }
 
   public setToken(token:string): void{
-    window.localStorage.removeItem(TOKEN_KEY);
+    this.clearToken();
     window.localStorage.setItem(TOKEN_KEY,token);
+  }
+
+  public clearToken(){
+    window.localStorage.removeItem(TOKEN_KEY);
   }
 
   public getToken(){

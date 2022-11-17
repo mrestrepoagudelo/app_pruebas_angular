@@ -1,3 +1,12 @@
+
+:host ::ng-deep .menuTreeMain .node-tree {
+	display: none;
+}
+
+:host ::ng-deep .menuTreeMain .node-visible {
+	display: block;
+}
+
 .op-navbar{
 	height: 60px;
 	display: flex;

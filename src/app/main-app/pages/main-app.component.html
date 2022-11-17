@@ -43,7 +43,7 @@
 
 <p-sidebar [(visible)]="visibleSidebar">
     <h2 class="title-app-sidebar">App</h2>
-    <p-tree [value]="menuTree" selectionMode="single" (onNodeSelect)="nodeSelect($event)" [style]="{'padding':'0px'}"></p-tree>
+    <p-tree [value]="menuTree" selectionMode="single" class="menuTreeMain" (onNodeSelect)="nodeSelect($event)" [style]="{'padding':'0px'}"></p-tree>
 </p-sidebar>
 
 <p-toast position="top-center"></p-toast>
